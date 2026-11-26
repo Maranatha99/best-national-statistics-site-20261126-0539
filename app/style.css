@@ -1,0 +1,268 @@
+/* ARUNIKA — Indonesia dalam Angka.
+   Palet: hijau hutan (identitas), kuning mentari (aksen "arunika" = matahari pagi),
+   kertas hangat sebagai latar. Hanya system font, tanpa unduhan luar. */
+
+:root {
+  --green: #0b3d2e;
+  --green-2: #0e7a5f;
+  --amber: #c97b1e;
+  --amber-light: #f6e3c2;
+  --paper: #f7f4ec;
+  --card: #ffffff;
+  --ink: #1c2420;
+  --muted: #5d574d;
+  --line: #e3ddd0;
+  --red: #b3402a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+a { color: var(--green-2); }
+a:hover { color: var(--green); }
+
+/* Header */
+.site-header {
+  background: var(--green);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+.header-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 28px;
+}
+.brand {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  font-size: 20px;
+  white-space: nowrap;
+}
+.brand-mark { color: #f2b544; }
+.brand-sub {
+  font-weight: 400;
+  letter-spacing: 0;
+  font-size: 14px;
+  color: #cfe3d8;
+}
+nav { display: flex; flex-wrap: wrap; gap: 4px 4px; }
+nav a {
+  color: #dcebe2;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+nav a:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+nav a.active { background: #f2b544; color: var(--green); font-weight: 700; }
+
+/* Kerangka halaman */
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 28px 20px 56px;
+}
+h1 { font-size: 38px; line-height: 1.15; margin: 0 0 10px; }
+h2 { font-size: 24px; margin: 0 0 6px; }
+.lede { font-size: 19px; color: #33302b; max-width: 760px; }
+.crumb { font-size: 14px; color: var(--muted); margin: 0 0 8px; }
+.page-head { margin-bottom: 24px; }
+.source { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
+.panel-sub { color: var(--muted); margin: 0 0 14px; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--green) 0%, #125c45 55%, var(--amber) 130%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 40px 36px;
+  margin-bottom: 24px;
+}
+.hero-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 13px;
+  color: #f2b544;
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+.hero h1 { font-size: 46px; margin: 0 0 12px; }
+.hero-lede { font-size: 19px; color: #e6f0ea; max-width: 720px; margin: 0 0 14px; }
+.hero-meta { font-size: 14px; color: #cfe3d8; margin: 0; }
+
+/* Kartu KPI */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.kpi {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--green-2);
+  border-radius: 12px;
+  padding: 16px 16px 12px;
+}
+.kpi:nth-child(even) { border-top-color: var(--amber); }
+.kpi-label { font-size: 13px; color: var(--muted); margin: 0 0 4px; font-weight: 600; }
+.kpi-value { font-size: 30px; font-weight: 800; line-height: 1.1; margin: 0 0 4px; }
+.kpi-note { font-size: 13px; color: var(--muted); margin: 0; }
+
+/* Panel dan kartu bagian */
+.panel { 
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px 26px;
+  margin-bottom: 24px;
+}
+/* Batasi lebar grafik agar satu grafik utuh muat dalam tangkapan 1280x800. */
+.panel svg { max-width: 780px; display: block; }
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.section-card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.section-card:hover { border-color: var(--green-2); box-shadow: 0 4px 16px rgba(11, 61, 46, 0.12); }
+.section-card strong { display: block; font-size: 19px; margin-bottom: 2px; }
+.section-card span { display: block; color: var(--muted); font-size: 14px; }
+.section-card .go { color: var(--green-2); font-weight: 700; margin-top: 8px; }
+
+/* Kartu fakta */
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.fact {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+}
+.fact-value { font-size: 26px; font-weight: 800; margin: 0 0 2px; }
+.fact-label { font-weight: 600; margin: 0 0 2px; }
+.fact-note { font-size: 13px; color: var(--muted); margin: 0; }
+
+.facts { margin: 0; padding-left: 20px; }
+.facts li { margin-bottom: 10px; }
+
+/* Tab */
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.tab {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.tab:hover { border-color: var(--green-2); }
+.tab.active { background: var(--green); color: #fff; border-color: var(--green); }
+.tab-panel.hidden { display: none; }
+
+/* Kontrol tabel */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  align-items: end;
+  margin-bottom: 12px;
+}
+.controls label { font-size: 14px; font-weight: 600; color: var(--muted); display: grid; gap: 4px; }
+.controls input, .controls select {
+  font: inherit;
+  font-size: 15px;
+  padding: 8px 10px;
+  border: 1px solid #cfc8b8;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  min-width: 200px;
+}
+.controls input:focus, .controls select:focus { outline: 2px solid var(--green-2); outline-offset: 1px; }
+.count { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
+
+/* Tabel */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+thead th {
+  text-align: left;
+  background: var(--green);
+  color: #fff;
+  padding: 10px 12px;
+  position: sticky;
+  top: 0;
+}
+tbody td { padding: 8px 12px; border-bottom: 1px solid #eee9dd; }
+tbody tr:nth-child(even) { background: #faf8f2; }
+tbody tr:hover { background: #f2ecdc; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tfoot td { padding: 10px 12px; background: var(--amber-light); }
+
+.legend { font-size: 14px; color: var(--muted); }
+.swatch { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: -2px; }
+.trade-detail {
+  background: #f2f7f4;
+  border-left: 4px solid var(--green-2);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin-top: 14px;
+}
+.trade-detail p { margin: 0; }
+
+/* Footer */
+.site-footer {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.site-footer p { margin: 0 0 6px; }
+
+/* Ponsel */
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  h1 { font-size: 30px; }
+  .hero { padding: 28px 22px; }
+  .hero h1 { font-size: 34px; }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-value { font-size: 24px; }
+  .link-grid { grid-template-columns: 1fr; }
+  .fact-grid { grid-template-columns: repeat(2, 1fr); }
+  .panel { padding: 18px; }
+  .header-inner { padding: 10px 14px; }
+  nav a { padding: 5px 8px; font-size: 14px; }
+  .controls input, .controls select { min-width: 0; width: 100%; }
+  .controls label { width: 100%; }
+}
